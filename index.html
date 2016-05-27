@@ -51,18 +51,19 @@
   </head>
 
   <body>
+      <div id="global-menu"></div>
     <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <a class="navbar-brand visible-md-block visible-lg-block" href="#/"><img src="img/logo.png" alt="Groepsadministratie Scouts en Gidsen Vlaanderen logo" width="50" height="64" /></a>
+      <div id="ribbon-wrapper" class="container-fluid">
+        <a class="navbar-brand visible-md-block visible-lg-block" href="#/"><img src="https://www.scoutsengidsenvlaanderen.be/sites/all/themes/theme2014/assets/img/logo.png" alt="Groepsadministratie Scouts en Gidsen Vlaanderen logo" /></a>
         <ul class="nav navbar-nav">
           <li class="active"><a href="#/">
-            <i class="fa fa-users" aria-hidden="true"></i>&nbsp; <span class="hidden-xs">Leden</span>
+            <span class="hidden-xs">Leden</span>
           </a></li>
           <li><a href="#/groepsinstellingen">
-            <i class="fa fa-cogs" aria-hidden="true"></i>&nbsp; <span class="hidden-xs">Groepsinstellingen</span>
+            <span class="hidden-xs">Groepsinstellingen</span>
           </a></li>
           <li><a href="#/orakel">
-            <span class="glyphicon glyphicon-stats"></span>&nbsp; <span class="hidden-xs">Orakel</span>
+           <span class="hidden-xs">Orakel</span>
           </a></li>
         </ul>
         <!-- Zoekveld -->
@@ -76,7 +77,7 @@
             </div>
           </div>
         </div>
-        <ul class="nav navbar-nav navbar-right">
+        <!--- <ul class="nav navbar-nav navbar-right">
           <li class="dropdown" ng-controller="UserController">
             <a href="#/lid/profiel">
               {{ username }}
@@ -85,7 +86,7 @@
           <li><a href="" ><i class="fa fa-question" aria-hidden="true"></i></a></li>
           <li><a ng-click="logout()" title="afmelden"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
 
-        </ul>
+        </ul> --->
       </div>
     </nav>
 
@@ -196,16 +197,16 @@
         window._keycloak = Keycloak({
           url: 'https://login.scoutsengidsenvlaanderen.be/auth',
           realm: 'scouts',
-          clientId: 'groepsadmin-dev-client'
+          clientId: 'groepsadmin-localhost-8000'
         });
 
-        window._keycloak
+       /* window._keycloak
           .init({
             onLoad: 'login-required'
           })
-          .success(function() {
+          .success(function() {*/
             angular.bootstrap(document, ['ga']); // manually bootstrap Angular
-          });
+         /* });*/
       });
     </script>
   </body>
