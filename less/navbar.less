@@ -35,10 +35,6 @@
 
 //----- TEMP -----
 
-.navbar {
-    background: url(https://www.scoutsengidsenvlaanderen.be/sites/all/themes/theme2014/assets/img/header_ribbon-2550.png) no-repeat center top transparent;
-}
-
 body, body.mceContentBody {
     background: url(https://www.scoutsengidsenvlaanderen.be/sites/all/themes/theme2014/assets/img/grunge-tile-beige.png) repeat center top #FFF;
 }
@@ -49,18 +45,84 @@ body, body.mceContentBody {
 
 #ribbon-wrapper {
     margin: 0 auto;
-    width: 1320px;
-    padding: 0 60px;
 }
 
-.navbar-nav {
-    padding: 0 100px;   
+@media screen and (min-width: 940px) {
+    #ribbon-wrapper {
+        width: 940px;
+        padding: 0 47px;
+        overflow: hidden;
+        clear: both;
+    }
+    
+    .navbar {
+        background: url(https://www.scoutsengidsenvlaanderen.be/sites/all/themes/theme2014/assets/img/header_ribbon-1210.png) no-repeat center top transparent;
+        height: 200px;
+    }
+    
+    .navbar-brand {
+        width: 60px;
+        margin-top: 65px;
+         margin-left: 0px;
+        float: left;
+    }
+    
+    .navbar-brand > img {
+        width: 60px;
+    }
+    
+    .navbar-nav {
+        margin-top: 90px;
+        padding: 0 60px;   
+    }
+    
+     .container-fluid {
+        width: 940px;
+    }
+}
+
+@media screen and (min-width: 1320px) {
+     .navbar {
+        background: url(https://www.scoutsengidsenvlaanderen.be/sites/all/themes/theme2014/assets/img/header_ribbon-2550.png) no-repeat center top transparent;
+        height: 200px;
+    }
+    
+    #ribbon-wrapper {
+        width: 1320px;
+        padding: 0 60px;
+    }
+    
+    .navbar-brand {
+        margin-left: 40px;
+        margin-top: 80px; 
+    }
+    
+    .navbar-brand > img {
+        width: auto;
+    }
+    
+    .navbar-nav {
+        margin-top: 120px;
+        padding: 0 100px;   
+    }
+    
+    .container-fluid {
+        width: 1320px;
+    }
 }
 
 #global-menu {
     height: 25px;
     width: 100%;
     background-color: #572600;
+}
+
+.nav-item {
+    display: inline-block;
+}
+
+#search {
+    margin-top: 110px;
 }
 
 //-----------
@@ -212,9 +274,6 @@ body, body.mceContentBody {
   padding: @navbar-padding-vertical @navbar-padding-horizontal;
   font-size: @font-size-large;
   line-height: @line-height-computed;
-    margin-left: 40px;
-    margin-top: 80px; 
-
 
   &:hover,
   &:focus {
@@ -270,16 +329,16 @@ body, body.mceContentBody {
 // the nav the full height of the horizontal nav (above 768px).
 
 .navbar-nav {
-  margin: (@navbar-padding-vertical / 2) -@navbar-padding-horizontal;
+  //margin: (@navbar-padding-vertical / 2) -@navbar-padding-horizontal;
+    
 
   > li > a {
-    padding-top:    10px;
-    padding-bottom: 10px;
+    padding: 20px;
     line-height: @line-height-computed;
     color: #572600;
     font-family: DCCAsh, sans-serif;
-    font-size: 22px;
-     text-transform: uppercase;
+    font-size: 30px;
+    text-transform: uppercase;
   }
 
   /* ga-adjustment
@@ -311,13 +370,12 @@ body, body.mceContentBody {
   // Uncollapse the nav
   //@media (min-width: @grid-float-breakpoint) { ga-adjustment
     float: left;
-    margin: 0;
 
     > li {
       float: left;
       > a {
-        padding-top:    @navbar-padding-vertical;
-        padding-bottom: @navbar-padding-vertical;
+        padding-top:    0px;
+        padding-bottom: 0px;
       }
     }
 
@@ -395,7 +453,6 @@ body, body.mceContentBody {
 
 // Menu position and menu carets
 .navbar-nav > li > .dropdown-menu {
-  margin-top: 0;
   .border-top-radius(0);
 }
 // Menu position and menu caret support for dropups via extra dropup class
