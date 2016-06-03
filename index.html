@@ -66,6 +66,22 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div id="ribbon-wrapper" class="container-fluid">
         <a class="navbar-brand" href="#/"><img src="https://www.scoutsengidsenvlaanderen.be/sites/all/themes/theme2014/assets/img/logo.png" alt="Groepsadministratie Scouts en Gidsen Vlaanderen logo" /></a>
+          
+        <div class="menu-tab tab">Menu</div>
+        <div class="search-tab tab">Zoek</div>
+          
+         <!-- Zoekveld -->
+        <div class="navbar-form navbar-left" ng-controller="SearchController" role="search" id="search">
+          <div class="col-xs-7 col-xxs-2">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Zoeken" ng-model="zoekterm" id="_zoekenWrap" uib-typeahead="lid for lid in zoekLid($viewValue)" typeahead-on-select="gaNaarLid($item)" typeahead-template-url="partials/zoeken-typeahead.html" typeahead-min-length="3" typeahead-loading="loadingLocations" typeahead-no-results="noResults"/>
+              <div ng-show="loadingLocations" class="input-group-addon" title="Leden aan het zoeken "><i class="fa fa-spinner fa-pulse"></i></div>
+              <div ng-show="noResults" class="input-group-addon" title="Geen resultaten gevonden"><i class="fa fa-ban"></i></div>
+
+            </div>
+          </div>
+        </div>  
+          
         <ul class="nav navbar-nav">
           <li class="active nav-item"><a href="#/">
             <span>Leden</span>
@@ -78,19 +94,9 @@
           </a></li>
         </ul>
           
-        <div class="menu-tab tab">Menu</div>
+        
           
-        <!-- Zoekveld -->
-        <div class="navbar-form navbar-left" ng-controller="SearchController" role="search" id="search">
-          <div class="col-xs-7 col-xxs-2">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Zoeken" ng-model="zoekterm" id="_zoekenWrap" uib-typeahead="lid for lid in zoekLid($viewValue)" typeahead-on-select="gaNaarLid($item)" typeahead-template-url="partials/zoeken-typeahead.html" typeahead-min-length="3" typeahead-loading="loadingLocations" typeahead-no-results="noResults"/>
-              <div ng-show="loadingLocations" class="input-group-addon" title="Leden aan het zoeken "><i class="fa fa-spinner fa-pulse"></i></div>
-              <div ng-show="noResults" class="input-group-addon" title="Geen resultaten gevonden"><i class="fa fa-ban"></i></div>
-
-            </div>
-          </div>
-        </div>
+       
         <!--
             <ul class="nav navbar-nav navbar-right">
               <li class="dropdown" ng-controller="UserController">

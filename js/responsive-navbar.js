@@ -53,8 +53,25 @@
     $clrInput.show();
   }*/
     
-$( ".menu-tab" ).click(function() {
-  $( ".navbar-nav" ).toggle();
+$(window).resize(function() {
+    if (document.body.clientWidth >= 923) {
+        $(".navbar-nav").show();
+    } else {
+        $(".navbar-nav").hide();
+    }
+});
+    
+$(document).mouseup(function (e) {
+    var container = $(".navbar-nav");
+    var menu = $(".menu-tab");
+
+    if (menu.is(":visible") && !container.is(e.target) && !menu.is(e.target)) {// if the target of the click isn't the container...
+        container.hide();
+    }
+});
+    
+$(".menu-tab").click(function() {
+  $(".navbar-nav").toggle();
 });
 
   function focusOut() {
