@@ -72,14 +72,6 @@
     text-indent: -99999px;
 }
 
-.globale_menubalk #items .menu_item {
-    display: inline;
-}
-
-.globale_menubalk #items li:nth-child(3),.globale_menubalk #items li:nth-child(4) {
-    display: inline;
-}
-
 .globale_menubalk #items li:last-child {
     margin-right: 0;
 }
@@ -140,4 +132,54 @@
 .globale_menubalk #account #item_instellingen,.globale_menubalk #account #item_afmelden {
     position: relative;
     top: -2px;
+}
+
+footer.region {
+    font-family: 'Fjalla One', sans-serif;
+    font-weight: normal;
+    font-size: 1.6rem;
+    overflow: hidden;
+    color: #FFF;
+}
+
+footer.region .footer-bottom .contact .arrow-link {
+    font-size: 1.9rem;
+    margin: 15px 0;
+}
+a.arrow-link {
+    height: 42px;
+    background-size: 100% 100%;
+}
+a.shape-link {
+    background: url(https://www.scoutsengidsenvlaanderen.be/sites/all/themes/theme2014/assets/img/btn-green.png) no-repeat 0 3px;
+    color: #748D26;
+}
+a.shape-link, a.long-shape-link, .views-field-nothing a {
+    display: inline-block !important;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    min-width: 7em;
+    padding-right: 0.6em;
+    text-align: center;
+    height: 2.2em;
+    line-height: 1.6;
+    background-size: 100%;
+}
+a.arrow-link, .views-field-nothing a {
+    font-family: DCCAsh,sans-serif;
+    font-weight: normal;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    text-decoration: none;
+}
+
+a.arrow-link::before, .views-field-nothing a::before {
+    font-family: scouts;
+    /*content: "\f002";*/
+    font-size: 1.4em;
+    padding-right: 0.3em;
+    position: relative;
+    top: 0.1em;
 }

@@ -65,18 +65,21 @@
       </div>
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div id="ribbon-wrapper" class="container-fluid">
-        <a class="navbar-brand visible-md-block visible-lg-block" href="#/"><img src="https://www.scoutsengidsenvlaanderen.be/sites/all/themes/theme2014/assets/img/logo.png" alt="Groepsadministratie Scouts en Gidsen Vlaanderen logo" /></a>
+        <a class="navbar-brand" href="#/"><img src="https://www.scoutsengidsenvlaanderen.be/sites/all/themes/theme2014/assets/img/logo.png" alt="Groepsadministratie Scouts en Gidsen Vlaanderen logo" /></a>
         <ul class="nav navbar-nav">
           <li class="active nav-item"><a href="#/">
-            <span class="hidden-xs">Leden</span>
+            <span>Leden</span>
           </a></li>
           <li class="nav-item"><a href="#/groepsinstellingen">
-            <span class="hidden-xs">Groepsinstellingen</span>
+            <span>Groepsinstellingen</span>
           </a></li>
           <li class="nav-item"><a href="#/orakel">
-           <span class="hidden-xs">Orakel</span>
+           <span>Orakel</span>
           </a></li>
         </ul>
+          
+        <div class="menu-tab tab">Menu</div>
+          
         <!-- Zoekveld -->
         <div class="navbar-form navbar-left" ng-controller="SearchController" role="search" id="search">
           <div class="col-xs-7 col-xxs-2">
@@ -88,21 +91,74 @@
             </div>
           </div>
         </div>
-        <!--- <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown" ng-controller="UserController">
-            <a href="#/lid/profiel">
-              {{ username }}
-            </a>
-          </li>
-          <li><a href="" ><i class="fa fa-question" aria-hidden="true"></i></a></li>
-          <li><a ng-click="logout()" title="afmelden"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+        <!--
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown" ng-controller="UserController">
+                <a href="#/lid/profiel">
+                  {{ username }}
+                </a>
+              </li>
+              <li><a href="" ><i class="fa fa-question" aria-hidden="true"></i></a></li>
+              <li><a ng-click="logout()" title="afmelden"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
 
-        </ul> --->
+            </ul>
+        -->
       </div>
     </nav>
 
     <!-- Include the rendered template -->
-    <div class="panel panel-default container-fluid" ng-view></div>
+    <div class="main-content">
+      <div class="panel panel-default container-fluid" ng-view></div>
+    </div>
+      
+      <footer class="region" id="footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="logo">
+            <a href="/" rel="home" title="Scouts en Gidsen Vlaanderen logo" class="logo-link">
+              <!--[if !IE]>-->
+                <img class="site-logo" src="https://www.scoutsengidsenvlaanderen.be/sites/all/themes/theme2014/assets/img/logo-alt.svg" alt="Scouts en Gidsen Vlaanderen">
+              <!--<![endif]-->
+              <!--[if lte IE 9]>
+                <img class="site-logo" src="/sites/all/themes/theme2014/assets/img/logo-alt.png" alt="Scouts en Gidsen Vlaanderen logo" />
+              <![endif]-->
+            </a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="contact">
+            Scouts en Gidsen Vlaanderen vzw<br>
+            Wilrijkstraat 45, 2140 Antwerpen<br>
+            <a href="callto:+3232311620">+32 3 231 16 20</a><br>
+            <a href="mailto:info@scoutsengidsenvlaanderen.be">info@scoutsengidsenvlaanderen.be</a><br>
+            <!--<a href="/contact" class="arrow-link shape-link">Contact</a>-->
+          </div>
+          <div class="externe-links">
+            <ul>
+              <li>
+                <div class="logo logo-hopper">
+                  <a href="http://www.hopper.be" title="Hopper" class="logo-link">
+                      <img class="site-logo" src="https://www.scoutsengidsenvlaanderen.be/sites/all/themes/theme2014/assets/img/logo-hopper.png" alt="Hopper">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="logo logo-vlaanderen">
+                  <a href="http://www.vlaanderen.be/nl" title="Vlaanderen - Verbeelding werkt" class="logo-link">
+                    <!--[if !IE]>-->
+                      <img class="site-logo" src="https://www.scoutsengidsenvlaanderen.be/sites/all/themes/theme2014/assets/img/logo-vlaanderen.svg" alt="Vlaanderen - Verbeelding werkt">
+                    <!--<![endif]-->
+                    <!--[if lte IE 9]>
+                      <img class="site-logo" src="/sites/all/themes/theme2014/assets/img/logo-vlaanderen.png" alt="Vlaanderen - Verbeelding werkt" />
+                    <![endif]-->
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
     
     <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="alert.close()">{{alert.msg}}</alert>
     

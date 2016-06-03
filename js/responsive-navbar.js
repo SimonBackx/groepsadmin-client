@@ -41,7 +41,7 @@
     }
   }
 
-  function inputFocus() {
+  /*function inputFocus() {
     open = true;
     $input.on("focusout", focusOut);
 
@@ -51,7 +51,11 @@
     });
     $navbarForm.animate({"width": initWidth});
     $clrInput.show();
-  }
+  }*/
+    
+$( ".menu-tab" ).click(function() {
+  $( ".navbar-nav" ).toggle();
+});
 
   function focusOut() {
     open = false;
