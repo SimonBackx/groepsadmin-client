@@ -5,11 +5,18 @@
     .module('ga.groepcontroller', ['ga.services.alert', 'ga.services.dialog', 'ui.bootstrap'])
     .controller('GroepController', GroepController);
 
-  GroepController.$inject = ['$scope', '$routeParams', '$window', '$location', '$log' , 'RestService', 'AlertService', 'DialogService', '$rootScope', 'keycloak'];
+  GroepController.$inject = ['$scope', '$routeParams', '$window', '$location', '$log' ,'$rootScope','GroepInstellingenService', 'RestService', 'AlertService', 'DialogService',  'keycloak'];
 
-  function GroepController($scope, $routeParams, $window, $location, $log, RestService, AlertService, DialogService, $rootScope, keycloak) {
+  function GroepController($scope, $routeParams, $window, $location, $log, $rootScope, GIS, RestService, AlertService, DialogService, keycloak) {
     $scope.markerLabels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     var tempId = 1;
+
+    // groepen ophalen (new)
+    GIS.getGroepen().then(function(res){
+      //console.log('GOT GROEPEN:',res);
+    })
+
+
     // groepen ophalen
     RestService.Groepen.get().$promise.then(
       function (result) {

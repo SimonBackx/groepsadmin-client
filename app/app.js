@@ -8,6 +8,7 @@
     'ga.services.alert',
     'ga.services.ledenfilter',
     'ga.services.ledenlijst',
+    'ga.services.groepinstellingen',
     'ga.ledenlijstcontroller',
     'ga.lidcontroller',
     'ga.usercontroller',
