@@ -13,45 +13,10 @@
 
     // groepen ophalen (new)
     GIS.getGroepen().then(function(res){
-      //console.log('GOT GROEPEN:',res);
-    })
-
-
-    // groepen ophalen
-    RestService.Groepen.get().$promise.then(
-      function (result) {
-        $scope.data = {};
-        $scope.data.groepenlijst = [];
-        //tijdelijk extra velden toevoegen aan het resultaat
-        angular.forEach(result.groepen, function(value){
-          value.vga = {
-            "naam": "Luke Skywalker",
-            "email": "luke@walkingin.sky"
-          };
-          value.groepsleiding = [
-            {
-              "naam": "Foo bar",
-              "email": "foo@bar.com"
-            },
-            {
-              "naam": "John doe",
-              "email": "john@doe.com"
-            }];
-
-          value.adres = [
-            value.adres
-          ];
-          $scope.data.groepenlijst.push(value);
-        })
-
-        // by default is de eerste groep actief
-        $scope.data.activegroup = $scope.data.groepenlijst[0];
-        maakSorteerbaar();
-        loadGoogleMap();
-      },
-      function (Error){
-      }
-    );
+      $scope.data = res;
+      maakSorteerbaar();
+      loadGoogleMap();
+    });
 
     /*
      * Google Maps Functies
