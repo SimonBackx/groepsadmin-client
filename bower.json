@@ -15,7 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "keycloak": "2.3.*",
+    "keycloak": "3.0.*",
     "lodash": "~4.17.4",
     "components-font-awesome": "~4.7.0"
   }
